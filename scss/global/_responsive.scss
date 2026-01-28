@@ -13,18 +13,21 @@
     #header {
         padding: 0;
     }
+    #header .logo {
+        max-width: 159px;
+    }
     .header-main {
-        padding: 0 15px;
+        padding: 0 10px;
     }
     .menu-list .menu-tt {
         font-size: 16px;
     }
     .header-download a {
-        font-size: 14px;
+        font-size: 12px;
         padding: 5px 10px;
     }
     .menu-list {
-        column-gap: 30px;
+        column-gap: 20px;
     }
     .index-visual {
         padding: 150px 15px 80px;

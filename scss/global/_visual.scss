@@ -31,9 +31,9 @@
         font-family: var(--font-cormorant);
         position: relative;
         z-index: 2;
-        clip-path: inset(0 100% 0 0);
+        clip-path: inset(100% 0 0 0);
         overflow: hidden;
-        animation: reveal 3s ease forwards;
+        animation: reveal 2s ease forwards;
     }
     .hero__sub {
         font-family: var(--font-ballet);
@@ -42,7 +42,7 @@
         line-height: 1em;
         margin-top: max(min(-9vw, -90px), -170px);
         margin-bottom: max(min(-5vw, -30px), -71px);
-        clip-path: inset(0 100% 0 0);
+        clip-path: inset(100% 0 0 0);
         overflow: hidden;
         animation: reveal 3s ease forwards;
     }
@@ -54,9 +54,9 @@
             text-transform: uppercase;
             font-weight: 600;
             line-height: 1.208em;
-            clip-path: inset(0 100% 0 0);
+            clip-path: inset(100% 0 0 0);
             overflow: hidden;
-            animation: reveal 3s ease forwards;
+            animation: reveal 2s ease forwards;
         }
     }
 }

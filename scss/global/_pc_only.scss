@@ -88,7 +88,14 @@
 
 /* END screen-min:769px */
 
-@media screen and (min-width: 769px) and (max-width: 1500px) {
+@media screen and (min-width: 769px) and (max-width: 1560px) {
+    #header .logo {
+        max-width: 179px;
+    }
+    .header-download a {
+        padding: 10px;
+        font-size: 16px;
+    }
 }
 
-/* END screen-min:769px && screen-max:1500px */
+/* END screen-min:769px && screen-max:1560px */
