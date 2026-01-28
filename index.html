@@ -189,13 +189,11 @@
                                 </div>
                             </div>
                             <div class="legal__moon">
-                                <img src="./images/sec_dc.png" width="1359" height="1359" alt="A Legal Mind with a Human Touch...">
                                 <div class="layer">
                                     <img src="./images/moon1.png" width="187" height="187" alt="A Legal Mind with a Human Touch...">
                                     <img src="./images/moon2.png" width="455" height="455" alt="A Legal Mind with a Human Touch...">
                                     <img src="./images/moon3.png" width="900" height="900" alt="A Legal Mind with a Human Touch...">
                                     <img src="./images/moon4.png" width="1359" height="1359" alt="A Legal Mind with a Human Touch...">
-
                                 </div>
                             </div>
                         </div>
@@ -292,6 +290,56 @@
     <script src="./js/lightbox.js"></script>
     <script src="./js/aos.js"></script>
     <script src="./js/common.js"></script>
+    <script>
+        const layer = document.querySelector('.layer');
+        const images = document.querySelectorAll('.layer img');
+
+        const scaleStarts = [0.85, 0.8, 0.7, 0.6];
+        const scaleEnd = 1;
+
+        window.addEventListener('scroll', () => {
+            const rect = layer.getBoundingClientRect();
+            const viewport = window.innerHeight;
+
+            // quãng scroll dùng để zoom
+            const zoomDistance = viewport * 2.5; // 1.5 → 2.5 là đẹp
+
+            // tính tiến trình zoom
+            let progress = (viewport - rect.top) / zoomDistance;
+            progress = Math.max(0, Math.min(progress, 1));
+
+            images.forEach((img, index) => {
+                const start = scaleStarts[index] || 0.7;
+                const scale = start + (scaleEnd - start) * progress;
+
+                img.style.transform = `translate(-50%, -50%) scale(${scale})`;
+            });
+        });
+
+
+        let currentScroll = window.scrollY;
+        let targetScroll = currentScroll;
+        const ease = 0.08;
+
+        window.addEventListener('wheel', (e) => {
+            e.preventDefault();
+
+            targetScroll += e.deltaY;
+            targetScroll = Math.max(
+                0,
+                Math.min(targetScroll, document.body.scrollHeight - window.innerHeight)
+            );
+
+        }, { passive: false });
+
+        function smoothScroll() {
+            currentScroll += (targetScroll - currentScroll) * ease;
+            window.scrollTo(0, currentScroll);
+            requestAnimationFrame(smoothScroll);
+        }
+
+        smoothScroll();
+    </script>
 </body>
 
 </html>

@@ -153,9 +153,9 @@
         z-index: 1;
     }
     &::after {
-        content: '';
+        content: "";
         position: absolute;
-        background: url('../images/bg_map.png') center no-repeat;
+        background: url("../images/bg_map.png") center no-repeat;
         background-size: cover;
         width: 1920px;
         height: 1099px;
@@ -171,33 +171,34 @@
             opacity: 0;
         }
         .layer {
+            position: relative;
+            height: 200vh;
             img {
                 position: absolute;
-                left: 0;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                margin: auto;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0.7);
+                transition: transform 0.1s linear;
             }
             img:nth-child(1) {
                 z-index: 4;
-                width: 14%;
-                max-width: 187px;
+                // width: 14%;
+                // max-width: 187px;
             }
             img:nth-child(2) {
                 z-index: 3;
-                width: 34%;
-                max-width: 455px;
+                // width: 34%;
+                // max-width: 455px;
             }
             img:nth-child(3) {
                 z-index: 2;
-                width: 67%;
-                max-width: 900px;
+                // width: 67%;
+                // max-width: 900px;
             }
             img:nth-child(4) {
                 z-index: 1;
-                width: 100%;
-                max-width: 1359px;
+                // width: 100%;
+                // max-width: 1359px;
             }
         }
     }
@@ -216,7 +217,7 @@
     .title {
         margin-bottom: 60px;
     }
-    
+
     .legal__parent {
         display: flex;
         flex-direction: column;
@@ -353,24 +354,23 @@
     }
 }
 
- .intro__bg {
-        position: relative;
-        z-index: 1;
-        &::before {
-            content: '';
-            position: absolute;
-            background: url('../images/intro_bg.png') center no-repeat;
-            background-size: cover;
-            width: 1920px;
-            height: 1352px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50% ,-50%);
-            z-index: -1;
-        }
+.intro__bg {
+    position: relative;
+    z-index: 1;
+    &::before {
+        content: "";
+        position: absolute;
+        background: url("../images/intro_bg.png") center no-repeat;
+        background-size: cover;
+        width: 1920px;
+        height: 1352px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
     }
+}
 #second-sec.intro {
-   
     .txt {
         padding: 200px 0;
         position: relative;
