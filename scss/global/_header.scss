@@ -1,0 +1,112 @@
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 70px 0 0;
+    height: var(--heightHeader);
+    transition: all 0.3s ease;
+    z-index: 99;
+    h1 {
+        font-size: 16px;
+        margin: 0;
+        display: none;
+    }
+
+    .logo {
+        a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+    }
+    &.fix {
+        padding-top: 0;
+        background-color: rgba($color: #000000, $alpha: 0.9);
+        box-shadow: 0 0 5px rgba($color: #fff, $alpha: 0.4);
+    }
+}
+
+
+.header-download {
+    a {
+        display: block;
+        background-color: #7491AF;
+        border: 1px solid #B4D0EF;
+        text-transform: uppercase;
+        padding: 10px 40px;
+        line-height: 1.2em;
+        font-size: 20px;
+        font-weight: 500;
+        color: #fff;
+    }
+}
+
+.header-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 80px;
+}
+
+.header-act {
+    display: flex;
+    align-items: center;
+}
+
+.menu-list {
+    position: relative;
+    display: flex;
+    column-gap: 40px;
+    .menu-tt {
+        line-height: 1.8;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 20px;
+        position: relative;
+        z-index: 1;
+        font-weight: 400;
+        &.active {
+            font-weight: bold;
+            &::before {
+                content: '';
+                position: absolute;
+                background-color: #fff;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                top: -5px;
+                left: 0;
+                z-index: -1;
+            }
+        }
+    }
+
+    // style chung
+    p {
+        margin-bottom: 0;
+    }
+
+    a {
+        position: relative;
+        display: block;
+    }
+}
+
+.dropdown {
+    position: relative;
+}
+
+.sub-menu {
+    width: 100%;
+    background-color: #fff;
+
+    a {
+        padding: 15px;
+    }
+}

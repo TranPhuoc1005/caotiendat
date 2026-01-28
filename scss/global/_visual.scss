@@ -1,0 +1,121 @@
+/*==========================================================================*/
+/*                         M A I N   V I S U A L                            */
+/*==========================================================================*/
+
+.index-visual {
+    position: relative;
+    z-index: 1;
+    padding: 181px 0 0;
+    height: 100vh;
+    &::before {
+        content: '';
+        position: absolute;
+        background: url('../images/hero.jpg') center no-repeat;
+        background-size: cover;
+        width: 1920px;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: -1;
+    }
+}
+
+.hero__txt {
+    text-align: center;
+    h1 {
+        // font-size: 200px;
+        font-size: max(min(calc(#{200} / #{1920} * 100vw), #{200}px) , #{110}px);
+        text-transform: uppercase;
+        color: #fff;
+        font-family: var(--font-cormorant);
+        position: relative;
+        z-index: 2;
+        clip-path: inset(0 100% 0 0);
+        overflow: hidden;
+        animation: reveal 3s ease forwards;
+    }
+    .hero__sub {
+        font-family: var(--font-ballet);
+        font-size: max(min(calc(#{320} / #{1920} * 100vw), #{320}px) , #{180}px);
+        color: #062548;
+        line-height: 1em;
+        margin-top: max(min(-9vw, -90px), -170px);
+        margin-bottom: max(min(-5vw, -30px), -71px);
+        clip-path: inset(0 100% 0 0);
+        overflow: hidden;
+        animation: reveal 3s ease forwards;
+    }
+    .hero__desc {
+        color: #fff;
+        p {
+            font-family: var(--font-cormorant);
+            font-size: max(min(calc(#{24} / #{1920} * 100vw), #{24}px) , #{16}px);
+            text-transform: uppercase;
+            font-weight: 600;
+            line-height: 1.208em;
+            clip-path: inset(0 100% 0 0);
+            overflow: hidden;
+            animation: reveal 3s ease forwards;
+        }
+    }
+}
+
+@keyframes reveal {
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.scroll__down {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 2;
+    width: max-content;
+    a {
+        font-size: 20px;
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        padding-bottom: 30px;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        display: block;
+        animation: scrollHint 2s infinite;
+        &::before {
+            content: '';
+            position: absolute;
+            background: url('../images/arrow_down.png') center no-repeat;
+            background-size: cover;
+            width: 24px;
+            height: 24px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: -1;
+        }
+    }
+}
+
+@keyframes scrollHint {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}

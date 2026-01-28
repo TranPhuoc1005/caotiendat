@@ -1,0 +1,115 @@
+/*==========================================================================*/
+/*                              F O O T E R                                 */
+/*==========================================================================*/
+
+#footer {
+    position: relative;
+    z-index: 2;
+    padding: 190px 0 120px;
+    .container {
+        border: 0;
+    }
+}
+
+address {
+    color: #D4D5D9;
+    opacity: 0.6;
+    font-size: 10px;
+    flex-shrink: 0;
+}
+
+.ft__frame {
+    display: flex;
+}
+
+.ft__logo {
+    width: 100%;
+    max-width: 633px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ft__info {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    max-width: 703px;
+    justify-content: space-between;
+    gap: 20px;
+    .txt {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.4em;
+        &.phone {
+            line-height: 1.4em;
+        }
+        a {
+            color: #fff;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.ft__logo--link {
+    a {
+        font-family: var(--font-cormorant);
+        font-size: 48px;
+        padding-right: 32px;
+        position: relative;
+        z-index: 1;
+        text-transform: uppercase;
+        color: #fff;
+        &::before {
+            content: '';
+            position: absolute;
+            background: url('../images/arrow_link.png') center no-repeat;
+            background-size: cover;
+            width: 24px;
+            height: 24px;
+            top: 0;
+            right: 0;
+            z-index: -1;
+        }
+    }
+}
+
+.ft__ttl {
+    color: rgba($color: #D4D5D9, $alpha: 0.6);
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    line-height: 1em;
+}
+
+.ft__info--address {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.ft__menu {
+    display: flex;
+    margin-top: auto;
+    li {
+        position: relative;
+        z-index: 1;
+        &:not(:last-child) {
+            padding-right: 16px;
+            margin-right: 16px;
+            &::before {
+                content: '/';
+                position: absolute;
+                color: #D4D5D9;
+                font-size: 14px;
+                top: 0;
+                right: 0;
+                z-index: -1;
+            }
+        
+        }
+    }
+    a {
+        color: #D4D5D9;
+    }
+}
