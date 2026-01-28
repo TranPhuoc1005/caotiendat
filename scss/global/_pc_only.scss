@@ -53,6 +53,10 @@
         }
     }
 
+    .header-download a:hover {
+        color: var(--main-cl);
+    }
+
     .dropdown {
         &:hover {
             > .sub-menu {
