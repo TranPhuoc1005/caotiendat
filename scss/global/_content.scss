@@ -164,6 +164,43 @@
         transform: translate(-50%, 0);
         z-index: -1;
     }
+    &__moon {
+        position: relative;
+        z-index: 1;
+        > img {
+            opacity: 0;
+        }
+        .layer {
+            img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+            }
+            img:nth-child(1) {
+                z-index: 4;
+                width: 14%;
+                max-width: 187px;
+            }
+            img:nth-child(2) {
+                z-index: 3;
+                width: 34%;
+                max-width: 455px;
+            }
+            img:nth-child(3) {
+                z-index: 2;
+                width: 67%;
+                max-width: 900px;
+            }
+            img:nth-child(4) {
+                z-index: 1;
+                width: 100%;
+                max-width: 1359px;
+            }
+        }
+    }
     .dc img {
         position: absolute;
         z-index: 2;
@@ -179,6 +216,7 @@
     .title {
         margin-bottom: 60px;
     }
+    
     .legal__parent {
         display: flex;
         flex-direction: column;
